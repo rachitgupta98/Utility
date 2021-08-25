@@ -12,6 +12,14 @@ var option = {
     indentBy: "  ",
     supressEmptyNode: true,
 };
+var timeZoneOffset = -120; // Eastern Standard Time UTC+2
+var sameDate = (new Date(((new Date()) - (timeZoneOffset * 60 * 1000)))).toISOString()
+console.log("Hello, World!");
+console.log(sameDate);
+var dateWithoutZ = sameDate.slice(0, -1);
+var r = dateWithoutZ.replace(/[:.-]/g, '');
+console.log(r);
+
 var ParserJS = xml_parser.j2xParser;
 var obj_parser = new ParserJS(option);
 
